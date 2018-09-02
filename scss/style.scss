@@ -1,0 +1,145 @@
+html{
+    height: 100%;
+	}
+	
+    body{
+    background-color: rgb(39, 115, 182);
+    height: 100%;
+    }
+   
+   .page{
+    margin: 0 auto;
+    height: 100%;
+    }
+   
+   header{
+    height: 10%;
+    }
+   main{
+	   float: left;
+	   width: 80%;
+   }
+   
+   aside{
+	   float: left;
+	   width: 20%;
+   }
+
+   .contents{
+	   background: rgb(255, 255, 255);
+	   margin: 5px;
+	   border: 1px solid #000;
+   }
+   ul{
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+    padding: 0;
+    }
+   
+   li{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+   
+   a{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #000;
+    display: block;
+    padding: 1em;
+    width:100%;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    }
+   
+a:hover{
+	background-color: rgb(187, 28, 28);
+}
+
+   .button{
+    position: fixed;
+    top: 0px;
+    right: 3%; 
+    visibility: hidden;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("../menu.svg");
+    background-size: 30px 30px;
+    }
+    .navi_background{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: 0;
+    }
+
+    input{
+    display: none;
+    }
+    @media screen and (max-width: 640px){
+    .menu_bar{
+
+    }
+   .navi{
+        display: none;
+   }
+   li{
+       width: 100%;
+   }
+   main{
+	   float: none;
+	   width: auto;
+   }
+   aside{
+	   float: none;
+	   width: auto;
+   }
+   .button{
+       visibility: visible;
+   }
+   input{
+       &:checked ~.navi{
+        display: block;
+        overflow: auto;
+        position: fixed;
+        top: 30px;
+        right: 3%;
+           z-index: 10;
+           width: 80%;
+           transition: .3s ease-in-out;
+           animation: foo 1s 0s, bar 1s 0s;
+       }
+       &:checked ~.navi_background{
+           z-index: 2;
+           display: block;
+		   opacity: .5;
+		   transition: 1.3s ease-in-out;
+       }
+   }
+   
+   
+   }
+   
+   @keyframes foo {
+    0% {
+    opacity: 0; }
+    100% {
+    opacity: 1; } }
+   
+   @keyframes bar {
+    0% {
+    transform: translateX(50px); }
+    100% {
+    transform: translateX(0px); } }
+   
